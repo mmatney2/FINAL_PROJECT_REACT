@@ -1,9 +1,8 @@
 import apiClientBasicAuth from './clientBasicAuth'
-const endpoint = '/app/user';
 
 
 
-
+const endpoint = '/api/user';
 
 
 const post = async ( userName, cancelToken) => {
@@ -21,10 +20,10 @@ const del = async( id, cancelToken)=>{
     return response.ok
 }
 
-const apiClientBasicAuth = {
+const apiClient = {
     
     post,
     put,
     del
 }
-export default apiClientBasicAuth
+export default apiClient

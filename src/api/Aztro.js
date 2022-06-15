@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+const endpoint= '/api/horoscope'
 
 
 class Aztro extends Component {
@@ -11,13 +12,13 @@ class Aztro extends Component {
     }
 
     componentDidMount () {
-        const URL = 'https://aztro.sameerkumar.website/?sign=aries&day=today';
+        const URL = 'https://aztro.sameerkumar.website/?sign=virgo&day=today';
         fetch(URL, {
             method: 'POST'
         }).then(response => response.json())
         .then(json => { this.setState({json}); });
-        console.log(URL)
-
+        console.log(this)
+        
     }
 
     render() {
@@ -39,3 +40,28 @@ class Aztro extends Component {
 }
 
 export default Aztro;
+
+
+
+// How to get Horoscope by User Id -->
+
+// const getByUse = async(id, cancelToken)=>{
+//     let error;
+//     let horoscopes;
+//     const response = await clientBasicAuth(cancelToken).get(endpoint+'/user/'+id);
+//     if(response.ok){
+//         horoscopes=response.data.horoscopes
+//     }else{
+//         error = "An Unexpected Error has Occured. Please Try again Later."
+//     }
+//     return {
+//         error,
+//         horoscopes
+//     }
+// }
+
+// const apiClient = {
+    
+//     getByUse
+// }
+// export default apiClient
