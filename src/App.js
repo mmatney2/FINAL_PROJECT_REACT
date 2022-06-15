@@ -11,7 +11,7 @@ import LoginForm from './forms/LoginForm';
 
 const handleAPITest=async ()=>{
   const source = CancelToken.source();
-  const response_object=await getUser("marquitamatney@gmail.com", "123", source.token);
+  const response_object=await getUser("m@m.com", "123", source.token);
   console.log(response_object)
 }
 
