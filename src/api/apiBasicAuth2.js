@@ -2,7 +2,7 @@ import apiClientBasicAuth from './clientBasicAuth'
 
 
 
-const endpoint = '/api/user';
+const endpoint = '/user';
 
 
 const post = async ( userName, cancelToken) => {
