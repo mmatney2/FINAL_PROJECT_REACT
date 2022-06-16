@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const endpoint= '/api/horoscope'
+// const endpoint= '/horoscope'
 
 
 
