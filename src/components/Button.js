@@ -5,9 +5,7 @@ export default function Button({children, variant, ...props}) {
     
 
   return (
-    <>
     <MUIButton variant={variant ?? "contained"} {...props}>{children}</MUIButton>
-    </>
   )
 }
 

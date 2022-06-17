@@ -1,0 +1,29 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+    align-items: center;
+
+}
+
+.sign{
+    padding: 20px;
+    font-size:40px;
+    height:600px;
+    width:600px;
+    background-image: stretch;
+    cursor: pointer;
+    background-image: url("https://media.istockphoto.com/photos/astrological-zodiac-signs-astrology-and-horoscopes-concept-3d-render-picture-id1068936728?s=612x612")
+}
+.grid2{
+    display: grid;
+    
+}
+
+.time{
+    padding:20px;
+    font-size: 40px;
+    cursor: pointer;
+    background-image: url("https://media.istockphoto.com/photos/astrological-zodiac-signs-astrology-and-horoscopes-concept-3d-render-picture-id1068936728?s=612x612")
+
+}

@@ -3,11 +3,17 @@
 
 
 export const getHoroscopes = (sign, timeframe) => {
-    return fetch(
-        `http://sandipbgt.com/theastrologer/api/horoscope/${sign}/${timeframe}`
-        // `https://aztro.sameerkumar.website/?sign=${sign}&day=${timeframe}/`
-    ).then((response)=> response.json())
-    .then(({horoscope}) => horoscope);
+    console.log(sign,timeframe);
+    // fetch(
+    //     // `http://sandipbgt.com/theastrologer/api/horoscope/${sign}/${timeframe}`
+    //     `https://aztro.sameerkumar.website/?sign=aries&day=today/`,{
+    //         method: 'POST'
+    //     }
+    // ).then((response)=> console.log(response));
+    const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=${timeframe}`;
+   return fetch(URL, {
+        method: 'POST'
+    }).then(response => response.json());
 };
 
 

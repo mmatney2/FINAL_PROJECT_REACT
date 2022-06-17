@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 // import {getSigns} from '../api/apiAztro';
 
 
@@ -11,14 +12,18 @@ export const SelectSign = ({onSignSelected}) => {
 
     return(
     <>
+    <div className="SelectSign">
     <h2>Please select a sign</h2>
-      {['Aries', 'Taurus', 'Gemini', 'Cancer', 'Virgo', 'Libra', 'Scorpio', 'Sagitarius', 'Capricorn', 'Aquarius', 'Pisces'].map((sign)=>(
-        <button key={sign} 
+    <div className="grid">
+      {['aries', 'taurus', 'gemini', 'cancer', 'leo','virgo', 'libra', 'scorpio', 'sagitarius', 'capricorn', 'aquarius', 'pisces'].map((sign)=>(
+        <button className="sign" key={sign} 
         onClick={() => onSignSelected(sign)}
         >
         {sign}
         </button>
          
       ))}
+      </div>
+      </div>
     </>
  )}

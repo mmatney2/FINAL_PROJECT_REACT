@@ -1,6 +1,6 @@
 import {create} from "apisauce";
 
-const apiClient = (token,cancelToken) =>create({
+const apiClientT = (token,cancelToken) =>create({
     baseURL: "http://127.0.0.1:5000",
     headers:{
         Authorization:"Bearer "+token
@@ -8,4 +8,4 @@ const apiClient = (token,cancelToken) =>create({
     cancelToken
 })
 
-export default apiClient
+export default apiClientT
