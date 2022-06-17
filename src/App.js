@@ -18,11 +18,14 @@ import Button from './components/Button';
 
 
 
-const my_token="1Xm3pKcsOzf27rTdhejwPmY1nnptCf5PXJEBNHeVNnQ"
+const my_token="F2-iJacP6_RfStV9z7r6dMwsTbuer2rQDL3AxjxrwfY"
 const handleAPITest=async ()=>{
   const source = CancelToken.source();
-  const response_object=await putUser(
-   my_token, 6,"e@g.com","e","e", "123", 
+  let data={"email": "c@c.com",
+  "first_name": "a",
+  "password":"1234",
+  "last_name": "a"}
+  const response_object=await delUser(my_token, 4,
     source.token
     );
   console.log(response_object);

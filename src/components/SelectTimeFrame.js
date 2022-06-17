@@ -9,7 +9,7 @@ export const SelectTimeFrame = ({
         <h2>Please select a TimeFrame</h2>
             <div className="grid2">
             {['today', 'tomorrow', 'yesterday'].map((timeframes)=>(
-                <button className="time"
+                <button className={timeframes}
                     key={timeframes} 
                     onClick={() => onTimeframeSelected(timeframes)}
                     >

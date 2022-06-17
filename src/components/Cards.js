@@ -1,6 +1,6 @@
 import {SelectSign} from './SelectSign';
 import {SelectTimeFrame} from './SelectTimeFrame';
-import {Card} from './Card';
+import Card from './Card';
 import React, { useState} from 'react';
 
 
@@ -28,7 +28,7 @@ export default function Cards(){
       />
       )}
       {selectedSign && selectedTimeFrame && (
-      <Cards 
+      <Card 
       sign={selectedSign} 
       timeframe={selectedTimeFrame}
       />

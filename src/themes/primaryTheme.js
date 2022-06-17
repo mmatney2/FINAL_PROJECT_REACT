@@ -4,29 +4,29 @@ export const themeOptions = {
     palette: {
       type: 'light',
       primary: {
-        main: '#DCB6D5',
+        main: '#21897E',
       },
       secondary: {
-        main: '#D2D6EF',
+        main: '#3BA99C',
       },
       info: {
-        main: '#AF929D',
+        main: '#69D1C5',
       },
       error: {
-        main: '#104547',
+        main: '#7EBCE6',
       },
       success: {
-        main: '#adf7b6',
+        main: '#8980F5',
       },
       warning: {
-        main: '#a09be7',
+        main: '#F7B2AD',
       },
     },
     overrides: {
       MuiAppBar: {
         colorInherit: {
           
-          color: '#104547',
+          color: '#69D1C5',
         },
       },
     },
