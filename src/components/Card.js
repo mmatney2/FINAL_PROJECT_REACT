@@ -24,7 +24,7 @@ function SingleCard(props){
 
     return (
         <div>
-        <h2>{timeframe}Your horoscope for {sign} is...
+        <h2>{timeframe} your horoscope for {sign} is...
         </h2>
        <h1>HELLOWORLD</h1>
 

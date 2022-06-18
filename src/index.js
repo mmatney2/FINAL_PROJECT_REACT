@@ -6,15 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import CssBaseline from '@mui/material/CssBaseline';
 import {ThemeProvider} from '@mui/material/styles';
 import primaryTheme from './themes/primaryTheme';
+import CustomThemeProvider from './context/ThemeContext';
+import AppContextProvider from './context/AppContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    {/* <CustomThemeProvider> */}
+    <AppContextProvider>
     <ThemeProvider theme={primaryTheme}>
     <CssBaseline/>
     <App />
     </ThemeProvider>
+    </AppContextProvider>
+    {/* </CustomThemeProvider> */}
   </React.StrictMode>
 );
 

@@ -71,7 +71,6 @@ export default function RegisterForm() {
       <TextField
         id="first_name"
         name="first_name"
-        type="first_name"
         fullWidth
         sx={{ mb: 2 }}
         label="first_name"
@@ -89,7 +88,6 @@ export default function RegisterForm() {
       <TextField
         id="last_name"
         name="last_name"
-        type="last_name"
         fullWidth
         sx={{ mb: 2 }}
         label="last_name"
