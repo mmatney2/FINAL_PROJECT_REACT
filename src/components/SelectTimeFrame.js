@@ -6,7 +6,7 @@ export const SelectTimeFrame = ({
     return(
     <>
     <div className="SelectTimeFrame">
-        <h2>Please select a TimeFrame</h2>
+        <h2>Please select a Day...</h2>
             <div className="grid2">
             {['today', 'tomorrow', 'yesterday'].map((timeframes)=>(
                 <button className={timeframes}

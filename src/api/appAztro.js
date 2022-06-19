@@ -4,12 +4,6 @@
 
 export const getHoroscopes = (sign, timeframe) => {
     console.log(sign,timeframe);
-    // fetch(
-    //     // `http://sandipbgt.com/theastrologer/api/horoscope/${sign}/${timeframe}`
-    //     `https://aztro.sameerkumar.website/?sign=aries&day=today/`,{
-    //         method: 'POST'
-    //     }
-    // ).then((response)=> console.log(response));
     const URL = `https://aztro.sameerkumar.website/?sign=${sign}&day=${timeframe}`;
    return fetch(URL, {
         method: 'POST'

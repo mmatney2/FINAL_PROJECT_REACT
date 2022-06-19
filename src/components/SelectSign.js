@@ -13,7 +13,7 @@ export const SelectSign = ({onSignSelected}) => {
     return(
     <>
     <div className="SelectSign">
-    <h2>Please select a sign</h2>
+    <h2>Please Select Your Sign...</h2>
     <div className="grid">
       {['aries', 'taurus', 'gemini', 'cancer', 'leo','virgo', 'libra', 'scorpio', 'sagitarius', 'capricorn', 'aquarius', 'pisces'].map((sign,i)=>{
       

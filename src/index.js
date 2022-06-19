@@ -8,18 +8,26 @@ import {ThemeProvider} from '@mui/material/styles';
 import primaryTheme from './themes/primaryTheme';
 import CustomThemeProvider from './context/ThemeContext';
 import AppContextProvider from './context/AppContext';
+import {BrowserRouter} from 'react-router-dom';
+import Horoscopes from './views/Horoscopes';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <CustomThemeProvider> */}
+    <BrowserRouter>
     <AppContextProvider>
+
     <ThemeProvider theme={primaryTheme}>
+
     <CssBaseline/>
-    <App />
+    <App />       
+
     </ThemeProvider>
+
     </AppContextProvider>
+    </BrowserRouter>
     {/* </CustomThemeProvider> */}
   </React.StrictMode>
 );

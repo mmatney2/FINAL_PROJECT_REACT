@@ -4,7 +4,6 @@ import {createContext, useEffect, useReducer, useState} from "react";
 export const AppContext = createContext();
 
 const AppContextProvider=({children})=>{
-    
     const getUserFromLS = ()=>{
         let user = localStorage.getItem('user');
         if(user){
@@ -12,6 +11,8 @@ const AppContextProvider=({children})=>{
         }
     }
     const [user, _setUser] = useState(getUserFromLS())
+    const [alert, setAlert] = useState({});
+
 
     const setUser =(user)=>{
         localStorage.setItem('user', JSON.stringigy(user))
@@ -20,7 +21,9 @@ const AppContextProvider=({children})=>{
 
     const values = (
         user,
-        setUser
+        setUser,
+        alert,
+        setAlert
     )
 
     return (
@@ -30,4 +33,4 @@ const AppContextProvider=({children})=>{
     )
 }
 
-export default AppContextProvider
+export default AppContextProvider;

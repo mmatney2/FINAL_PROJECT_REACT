@@ -10,15 +10,15 @@ export default function Cards(){
   const [selectedSign, setSelectedSign] = useState(null);
   const [selectedTimeFrame, setSelectedTimeFrame] = useState(null);
 
-  const restart = () =>{
-    setSelectedSign(null);
-    selectedTimeFrame(null);
-  }
+  // const restart = () =>{
+  //   setSelectedSign(null);
+  //   selectedTimeFrame(null);
+  // }
 
   return(
     
     <div className="Cards">
-      <h1>The Horoscope App</h1>
+      <h1>Horoscopes</h1>
       {!selectedSign && (
       <SelectSign onSignSelected={setSelectedSign}/>
       )}
@@ -33,7 +33,7 @@ export default function Cards(){
       timeframe={selectedTimeFrame}
       />
       )}
-      <button onClick={restart}>Restart</button>
+      {/* <button onClick={restart}>Restart</button> */}
       </div>
-);
-      }
+      );
+}

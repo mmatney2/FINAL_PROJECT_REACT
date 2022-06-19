@@ -4,13 +4,45 @@ import { CancelToken } from "apisauce";
 import { AppContext } from "../context/AppContext";
 // import { useNavigate } from "react-router-dom";
 
+// export default function useLogin(loginCreds, setLoginCreds, setError) {
+//     const login = async (cancelToken, loginCreds) => {
+//         const response = await getUser(
+//             loginCreds.email,
+//             loginCreds.password,
+//             cancelToken
+//         );
+//         console.log(response);
+//         if (response.user?.token) {
+//             console.log("logged in");
+//             setUser(response.user);
+//             setLoginCreds({});
+//         //   navigate("/");
+//         } // navigate to the home page
+//         setError(response.error);
+//     };
+
+//     useEffect(
+//         () => {
+//             const source = CancelToken.source()
+//             if (loginCreds.email && loginCreds.password)
+//             login(source.token)
+//             return()=>{source.cancel()}
+//         },
+//         [loginCreds, setLoginCreds, setError, setUser]
+//     )
+//     }
+
+
+
+
+
+
 export default function useLogin(loginCreds, setLoginCreds, setError) {
 //   const navigate = useNavigate();
   const { setUser } = useContext(AppContext);
   useEffect(
     () => {
-        const source = CancelToken.source();
-
+        const source = CancelToken.source()
         if (loginCreds.email && loginCreds.password) {
         const login = async (cancelToken, loginCreds) => {
         const response = await getUser(
