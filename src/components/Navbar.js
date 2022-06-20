@@ -12,6 +12,9 @@ import ListItemText from '@mui/material/ListItemText';
 import ReactDOM from 'react-dom';
 import Cards from './Cards';
 import {useNavigate} from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+import {Link} from 'react-router-dom';
+import RegLink from '@mui/material/Link';
 
 
 // import InboxIcon from '@mui/icons-material/MoveToInbox';
@@ -72,7 +75,7 @@ export default function TemporaryDrawer({children}) {
   };
 
   const list = (anchor) => (
-    <Box sx={{fontSize: 40, color:"white", backgroundImage:"linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.etsystatic.com/25958866/r/il/82a8e3/3365333893/il_794xN.3365333893_syzp.jpg')",     backgroundSize: 'cover', flexGrow: 1}}>
+    <Box sx={{fontSize: 40, color:"white", backgroundImage:"linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.freepik.com/free-photo/astrology-horoscope-pattern-texture-background-graphic-design_41691-3225.jpg?w=900')",     backgroundSize: 'cover', flexGrow: 1}}>
 
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 550 }}
@@ -82,19 +85,24 @@ export default function TemporaryDrawer({children}) {
     >
 
       <List>
+        {
+        [{label:'Home', path:'/'}, 
+        {label:'Daily Horoscope', path:'/horoscopes'},
+        {label:'Tarot Reading', path:'/tarot'},
+        {label:'Edit Profile', path:'/edit'},
 
-        {['Home', 
-        // {label:
-          'Daily Horoscope', 
-          // path:'/horoscopes'},
-        'Tarot Reading'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+        {label:'Logout', path:'/logout'},
+        {label:'Login', path:'/login'},
+        {label:'Register', path:'/register'},
+        ].map((text, index) => (
+          <ListItem key={text.label} disablePadding>
+            
+            <Link to={text.path} style={{display:"flex", color:'inherit', textDecoration:'none'}}>
               {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon> */}
-              <ListItemText primary={text} />
-            </ListItemButton>
+              <ListItemText primary={text.label} />
+            </Link>
           </ListItem>
         ))}
       </List> 

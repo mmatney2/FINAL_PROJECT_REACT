@@ -2,9 +2,13 @@ import React, {useEffect, useContext} from 'react'
 import {put} from '../api/apiUser'; 
 import { CancelToken } from 'apisauce';
 import {AppContext} from '../context/AppContext';
+import { useNavigate } from "react-router-dom";
+
 
 export default function useEdit(loginCreds, setLoginCreds, setError) {
 //get navigate
+const navigate = useNavigate();
+
 const {setUser} = useContext(AppContext)
 
     const put = async (cancelToken)=>{
@@ -14,6 +18,8 @@ const {setUser} = useContext(AppContext)
             console.log('logged in');
             setUser(response.user);
             setLoginCreds({})
+            navigate("/horoscopes");
+
             // navigate to the home page
         }
         setError(response.error);

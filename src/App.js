@@ -7,7 +7,7 @@ import {getUser} from './api/apiBasicAuth';
 import { delUser, putUser, postUser} from './api/apiUser'
 import { CancelToken } from 'apisauce';
 import LoginForm from './forms/LoginForm';
-import RegisterForm from './forms/RegisterForm';
+import RegForm from './forms/RegisterForm';
 // import {getHoroscope} from './api/appAztro';
 import {SelectSign} from './components/SelectSign';
 import {SelectTimeFrame} from './components/SelectTimeFrame';
@@ -29,18 +29,18 @@ import { useContext } from "react";
 
 const HomePage = () => {
 
-  return <h1>Please Select Your Sign...</h1>;
+  return <h1 color="white">Please Click on Menu to Choose Your Path....</h1>;
 };
 
 
-const my_token="kbAR59N2PiS-in9KfVQHU0rxv4nqOfyaCdZxVY9gYPo"
+const my_token="l3tKyac27GMqMNo_de2kKbNj052TL0Px7TmDXu4ecTM"
 const handleAPITest=async ()=>{
   const source = CancelToken.source();
-  // let data={"email": "c@c.com",
-  // "first_name": "a",
-  // "password":"1234",
-  // "last_name": "a"}
-  const response_object=await delUser(my_token, 3,
+  let data={"email": "b@b.com",
+  "first_name": "bb",
+  "password":"123",
+  "last_name": "bb"}
+  const response_object=await putUser(my_token, 7,data,
     source.token
     );
   console.log(response_object);
@@ -52,7 +52,7 @@ function App(){
    {
     const myStyle={
         backgroundImage: 
- "url('https://media2.fdncms.com/pittsburgh/imager/u/original/20572714/robbrezsny-freewillastrology-horoscope_1_.jpg')",
+ "url('https://img.freepik.com/free-photo/astrology-horoscope-pattern-texture-background-graphic-design_41691-3225.jpg?w=900')",
         height:'100vh',
         marginTop:'-70px',
         fontSize:'50px',
@@ -64,21 +64,25 @@ function App(){
         <Navbar>
         <Box sx={{minHeight:'90vh'}}>
          <Button color = "success" onClick={handleAPITest}>Test API Call</Button>
-         {/* <div style={myStyle}></div> */}
           <Routes>
-            <Route path="/" element={<HomePage/>}/>
-            <Route path="/horoscopes" element={<Horoscopes/>}/>
-            <Route path="/horoscope" element={<Horoscope/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
+
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/horoscopes" element={<Horoscopes/>}/>
+            {/* <Route path="/horoscope" element={<Horoscope/>}/> */}
             <Route path="/edit" element={<Edit/>}/>
             <Route path="/logout" element={<Logout/>}/>
             {/* <Route path="/tarot" element={<Tarot/>}/> */}
          </Routes>
+         <div style={myStyle}></div>
          </Box>
+         {user?.is_admin ? <HomePage/> : <Login/> && <Register/>}
          
    
      </Navbar>
+     
+
    </>
 )
     }

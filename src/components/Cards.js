@@ -10,10 +10,7 @@ export default function Cards(){
   const [selectedSign, setSelectedSign] = useState(null);
   const [selectedTimeFrame, setSelectedTimeFrame] = useState(null);
 
-  // const restart = () =>{
-  //   setSelectedSign(null);
-  //   selectedTimeFrame(null);
-  // }
+  
 
   return(
     
@@ -33,7 +30,6 @@ export default function Cards(){
       timeframe={selectedTimeFrame}
       />
       )}
-      {/* <button onClick={restart}>Restart</button> */}
       </div>
       );
 }

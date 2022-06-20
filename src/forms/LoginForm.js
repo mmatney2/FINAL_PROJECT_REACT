@@ -6,6 +6,8 @@ import TextField from '@mui/material/TextField';
 import { AppContext } from '../context/AppContext';
 import Error from '../components/Error';
 import useLogin from '../hooks/useLogin';
+import { useParams } from "react-router-dom";
+import {Navigate} from 'react-router-dom'
 
 //Defining our yup validation
 const FormSchema=Yup.object(

@@ -7,6 +7,9 @@ import { CancelToken } from "apisauce";
 import { AppContext } from "../context/AppContext";
 import useEdit from "../hooks/useEdit";
 import useDelete from "../hooks/useDelete";
+import Error from '../components/Error';
+import { useParams } from "react-router-dom";
+import {Navigate} from 'react-router-dom'
 
 
 //Defining our yup validation
@@ -80,6 +83,40 @@ export default function EditProfileForm({user}) {
         onChange={formik.handleChange}
         error={formik.touched.password && Boolean(formik.errors.password)}
         helperText={formik.touched.password && formik.errors.password}
+      />
+      <TextField
+        id="first_name"
+        name="first_name"
+        fullWidth
+        sx={{ mb: 2 }}
+        label="first_name"
+        placeholder="first_name"
+        value={formik.values.first_name}
+        onChange={formik.handleChange}
+        error={
+          formik.touched.first_name &&
+          Boolean(formik.errors.first_name)
+        }
+        helperText={
+          formik.touched.first_name && formik.errors.first_name
+        }
+      />
+      <TextField
+        id="last_name"
+        name="last_name"
+        fullWidth
+        sx={{ mb: 2 }}
+        label="last_name"
+        placeholder="last_name"
+        value={formik.values.last_name}
+        onChange={formik.handleChange}
+        error={
+          formik.touched.last_name &&
+          Boolean(formik.errors.last_name)
+        }
+        helperText={
+          formik.touched.last_name && formik.errors.last_name
+        }
       />
       
 

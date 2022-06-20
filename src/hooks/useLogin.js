@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { getUser } from "../api/apiBasicAuth";
 import { CancelToken } from "apisauce";
 import { AppContext } from "../context/AppContext";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // export default function useLogin(loginCreds, setLoginCreds, setError) {
 //     const login = async (cancelToken, loginCreds) => {
@@ -38,7 +38,7 @@ import { AppContext } from "../context/AppContext";
 
 
 export default function useLogin(loginCreds, setLoginCreds, setError) {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
   const { setUser } = useContext(AppContext);
   useEffect(
     () => {
@@ -55,7 +55,7 @@ export default function useLogin(loginCreds, setLoginCreds, setError) {
           console.log("logged in");
           setUser(response.user);
           setLoginCreds({});
-        //   navigate("/");
+          navigate("/horoscopes");
         } // navigate to the home page
         setError(response.error);
       };
@@ -63,5 +63,5 @@ export default function useLogin(loginCreds, setLoginCreds, setError) {
     }
     return () => {source.cancel()};
   },
-    [loginCreds, setLoginCreds, setError, setUser]); //add navigate
+    [loginCreds, setLoginCreds, setError, setUser, navigate]); //add navigate
 }
