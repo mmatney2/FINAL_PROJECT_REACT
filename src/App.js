@@ -75,9 +75,9 @@ function App(){
             <Route path="/logout" element={<Logout/>}/>
             {/* <Route path="/tarot" element={<Tarot/>}/> */}
          </Routes>
-         <div style={myStyle}></div>
+         {/* <div style={myStyle}></div> */}
          </Box>
-         {user?.is_admin ? <HomePage/> : <Login/> && <Register/>}
+         {/* {user?.is_admin ? <HomePage/> : <Login/> && <Register/>} */}
          
    
      </Navbar>

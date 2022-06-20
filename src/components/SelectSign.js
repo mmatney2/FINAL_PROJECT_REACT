@@ -18,7 +18,10 @@ export const SelectSign = ({onSignSelected}) => {
       {['aries', 'taurus', 'gemini', 'cancer', 'leo','virgo', 'libra', 'scorpio', 'sagitarius', 'capricorn', 'aquarius', 'pisces'].map((sign, i)=>{
       
     return(
-    <button className={sign} key={sign} onClick={() => onSignSelected(sign)}>{sign}</button>
+    <button className={sign} key={sign} onClick={() => onSignSelected(sign)}>
+      {sign}
+      <p>heloo</p>
+      </button>
       )
          
       })}

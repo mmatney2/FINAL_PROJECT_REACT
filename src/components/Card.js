@@ -9,6 +9,9 @@ import Avatar from "@mui/material/Avatar";
 import { useParams } from "react-router-dom";
 import Error from "./Error";
 import { CircularProgress } from "@mui/material";
+import leo from '../assets/leo_sign.webp';
+import sagittarius from '../assets/sagittarius.webp';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -45,7 +48,7 @@ sx={{ m: 1, pr: 2, border: "1px solid", borderRadius: 1 }}
       alt={props.data.color}
       sx={{ height: "30%", width: "30%" }}
       variant="rounded"
-    //   src={book.img}
+     src={props.signImage}
     />
   </Item>
 </Grid>
@@ -111,7 +114,8 @@ sx={{ m: 1, pr: 2, border: "1px solid", borderRadius: 1 }}
     }
 }
  const Card = ({sign, timeframe})=>{
-    const [horoscope, setHoroscope] = useState([]);
+    //const [horoscope, setHoroscope] = useState([]);
+    let signImage;
     let [data, setdata] = useState(null)
 
     useEffect(()=>{
@@ -124,13 +128,25 @@ sx={{ m: 1, pr: 2, border: "1px solid", borderRadius: 1 }}
 
     }, [timeframe]);
 
+    switch(sign){
+        case 'leo': 
+            console.log("CASE LEO");
+            signImage = leo;
+            break;
+        case 'sagitarius': 
+            console.log("CASE Sag");
+            signImage = sagittarius;
+            break;
+        default:
+            console.log("Selet sign Button")    
+    }
 
     return (
         <div>
         <h2>{timeframe} your horoscope for {sign} is...
         </h2>
-
-         <SingleCard data={data} /> 
+            {console.log(sign)}
+         <SingleCard data={data} signImage={signImage} /> 
         </div>
     )
 }

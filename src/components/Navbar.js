@@ -97,7 +97,7 @@ export default function TemporaryDrawer({children}) {
         ].map((text, index) => (
           <ListItem key={text.label} disablePadding>
             
-            <Link to={text.path} style={{display:"flex", color:'inherit', textDecoration:'none'}}>
+            <Link to={text.path} style={{display:"flex", color:'inherit', textDecoration:'none', fontSize:"32px"}}>
               {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon> */}
