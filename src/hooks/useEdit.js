@@ -6,28 +6,27 @@ import {AppContext} from '../context/AppContext';
 import { useNavigate } from "react-router-dom";
 
 
-export default function useEdit( id) {
+export default function useEdit( newData) {
 //get navigate
     const {user, setAlert} = useContext(AppContext)
     const navigate = useNavigate()
-
     useEffect(
         ()=>{
             let response
             const source = CancelToken.source()
-            if (user){
+            if (newData){
                 (async()=>{
-                    response = await apiClient.put(user.token, id, user, source.token)
+                    response = await apiClient.put(user.token, user.id, newData, source.token)
                     if (response){
                         setAlert({msg:`User: ${user} Edited`,user:'success'})
                     }else if(response === false && response !== undefined){
                         setAlert({msg:`Please reauthorize you account`,'cat':'warning'})
-                        navigate('/')                    
+                        navigate('/login')                    
                     }
                 })()
             }
             return ()=>{source.cancel()}
-        },[ id,user, user.token]
+        },[ user, newData]
     )
 }
 

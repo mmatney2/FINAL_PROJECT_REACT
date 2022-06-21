@@ -36,7 +36,7 @@ const HomePage = () => {
 };
 
 
-const my_token="wl7Q-_CmhJvQipSVE79KsQvvzQyrKkQrvIzA6YT-c44"
+const my_token="BCUaywkGEWSbGXV8gWb8BoQaKFxz3Y20CL7qgtTSt0M"
 const handleAPITest=async ()=>{
   const source = CancelToken.source();
   let data={"email": "f@f.com",
@@ -74,7 +74,7 @@ function App(){
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
 
-            <Route path="/" element={<HomePage/>}/>
+            <Route path="/" element={<Login/>}/>
             <Route path="/horoscopes" element={<Horoscopes/>}/>
             {/* <Route path="/horoscope" element={<Horoscope/>}/> */}
             <Route path="/edit" element={<Edit/>}/>

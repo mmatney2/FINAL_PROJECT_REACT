@@ -16,7 +16,7 @@ export const post= async ( data,cancelToken) => {
 export const put= async ( token, id, data, cancelToken) => {
     
     const response = await apiClientT(token, cancelToken).put(endpoint+"/"+id, data);
-    // console.log(response)
+    console.log(response)
     return response.ok
 }
 
