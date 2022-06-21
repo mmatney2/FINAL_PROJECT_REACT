@@ -1,5 +1,7 @@
 import React, {useEffect, useContext} from 'react'
-import {delUser} from '../api/apiUser'; 
+import del from '../api/apiUser'; 
+import apiClient from '../api/apiUser'
+
 import { CancelToken } from 'apisauce';
 import {AppContext} from '../context/AppContext';
 import {useNavigate} from 'react-router-dom';
@@ -15,7 +17,7 @@ export default function useDelete(user_id) {
             const source = CancelToken.source()
             if (user_id){
                 (async()=>{
-                    response = await delUser(user.token, user_id, source.token)
+                    response = await apiClient.del(user.token, user_id, source.token)
                     if (response){
                          setAlert({msg:`User: ${user_id} Deleted`, cat:'success'})
                     }else if(response === false && response !== undefined){

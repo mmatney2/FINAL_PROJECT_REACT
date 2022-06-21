@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import List from '@mui/material/List';
+import '../App.css';
+
 // import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -84,7 +86,7 @@ export default function TemporaryDrawer({children}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
 
-      <List>
+      <List >
         {
         [{label:'Home', path:'/'}, 
         {label:'Daily Horoscope', path:'/horoscopes'},
@@ -95,12 +97,10 @@ export default function TemporaryDrawer({children}) {
         {label:'Login', path:'/login'},
         {label:'Register', path:'/register'},
         ].map((text, index) => (
-          <ListItem key={text.label} disablePadding>
+          <ListItem  key={text.label} >
             
-            <Link to={text.path} style={{display:"flex", color:'inherit', textDecoration:'none', fontSize:"32px"}}>
-              {/* <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon> */}
+            <Link to={text.path} style={{display:"flex", color:"white", textDecoration:'none', fontSize:"30px"}}>
+              
               <ListItemText primary={text.label} />
             </Link>
           </ListItem>

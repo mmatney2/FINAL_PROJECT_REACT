@@ -13,14 +13,13 @@ export const SelectSign = ({onSignSelected}) => {
     return(
     <>
     <div className="SelectSign">
-    <h2>Please Select Your Sign...</h2>
+    <h2 id="h1">Choose Your Sign...</h2>
     <div className="grid">
-      {['aries', 'taurus', 'gemini', 'cancer', 'leo','virgo', 'libra', 'scorpio', 'sagitarius', 'capricorn', 'aquarius', 'pisces'].map((sign, i)=>{
+      {['aries', 'taurus', 'gemini', 'cancer', 'leo','virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'].map((sign, i)=>{
       
     return(
-    <button className={sign} key={sign} onClick={() => onSignSelected(sign)}>
+    <button id="size" className={sign} key={sign} onClick={() => onSignSelected(sign)}>
       {sign}
-      <p>heloo</p>
       </button>
       )
          

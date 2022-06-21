@@ -17,16 +17,12 @@ root.render(
   <React.StrictMode>
     {/* <CustomThemeProvider> */}
     <BrowserRouter>
-    <AppContextProvider>
-
-    <ThemeProvider theme={primaryTheme}>
-
-    <CssBaseline/>
-    <App />       
-
-    </ThemeProvider>
-
-    </AppContextProvider>
+      <AppContextProvider>
+        <ThemeProvider theme={primaryTheme}>
+          <CssBaseline/>
+            <App />       
+        </ThemeProvider>
+      </AppContextProvider>
     </BrowserRouter>
     {/* </CustomThemeProvider> */}
   </React.StrictMode>

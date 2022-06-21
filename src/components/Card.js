@@ -9,8 +9,19 @@ import Avatar from "@mui/material/Avatar";
 import { useParams } from "react-router-dom";
 import Error from "./Error";
 import { CircularProgress } from "@mui/material";
-import leo from '../assets/leo_sign.webp';
+import leo from '../assets/leo.jpg';
 import sagittarius from '../assets/sagittarius.webp';
+import libra from '../assets/libra.jpg';
+import aquarius from '../assets/aquarius.jpg';
+import aries from '../assets/aries.jpg';
+import cancer from '../assets/cancer.jpg';
+import gemini from '../assets/gemini.jpg';
+import pisces from '../assets/pisces.jpg';
+import scorpio from '../assets/scorpio.jpg';
+import taurus from '../assets/taurus.jpg';
+import virgo from '../assets/virgo.jpg';
+import capricorn from '../assets/capricorn.jpg';
+import '../App.css';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -26,21 +37,11 @@ function SingleCard(props){
     if(props.data){
         
         return( 
-            <>
-        {/* <p>Color: {props.data.color}</p>
-        <p>Lucky Time: {props.data.lucky_time}</p>
-        <p>Description: {props.data.description}</p>
-        <p>Date Range: {props.data.date_range}</p>
-        <p>Mood: {props.data.mood}</p>
-        <p>compatibility: {props.data.compatibility}</p>
-        <p>Current Date: {props.data.current_date}</p>
-        <p>Lucky Number: {props.data.lucky_number}</p> */}
-            
-
+    <>
 <Grid
 container
 spacing={1}
-sx={{ m: 1, pr: 2, border: "1px solid", borderRadius: 1 }}
+sx={{fontSize:40, m: 1, pr: 2, border: "10px solid", borderRadius: 1 }}
 >
 <Grid book sm={12} xs={12} md={12}>
   <Item sx={{ display: "flex", justifyContent: "center" }}>
@@ -55,57 +56,57 @@ sx={{ m: 1, pr: 2, border: "1px solid", borderRadius: 1 }}
 <Grid book sm={12} xs={12} md={12}>
   <Item sx={{ height: "100%", alignContent: "center" }}>
     <Typography variant="subtitle1">
-      <strong>Description:</strong>
+      <h1><strong>Description:</strong></h1>
     </Typography>
-    <Typography variant="body1">{props.data.description}</Typography>
+    <Typography variant="body1"><h3>{props.data.description}</h3></Typography>
   </Item>
 </Grid>
 <Grid book sm={6} xs={6} md={6}>
   <Item sx={{ height: "100%" }}>
     <Typography variant="subtitle1">
-      <strong>Lucky Time:</strong>
+    <h1><strong>Lucky Time:</strong></h1>
     </Typography>
-    <Typography variant="body1">{props.data.lucky_time}</Typography>
+    <Typography variant="body1"><h3>{props.data.lucky_time}</h3></Typography>
   </Item>
 </Grid>
 <Grid book sm={6} xs={6} md={6}>
   <Item sx={{ height: "100%" }}>
     <Typography variant="subtitle1">
-      <strong>Date Range:</strong>
+    <h1><strong>Date Range:</strong></h1>
     </Typography>
-    <Typography variant="body1">{props.data.date_range}</Typography>
+    <Typography variant="body1"><h3>{props.data.date_range}</h3></Typography>
   </Item>
 </Grid>
 <Grid book sm={12} xs={12} md={12}>
   <Item sx={{ height: "100%" }}>
     <Typography variant="subtitle1">
-      <strong>Mood:</strong>
+    <h1><strong>Mood:</strong></h1>
     </Typography>
-    <Typography variant="body1">{props.data.mood}</Typography>
+    <Typography variant="body1"><h3>{props.data.mood}</h3></Typography>
   </Item>
 </Grid>
 <Grid book sm={12} xs={12} md={12}>
   <Item sx={{ height: "100%" }}>
     <Typography variant="subtitle1">
-      <strong>Compatibility:</strong>
+    <h1><strong>Compatibility:</strong></h1>
     </Typography>
-    <Typography variant="body1">{props.data.compatibility}</Typography>
+    <Typography variant="body1"><h3>{props.data.compatibility}</h3></Typography>
   </Item>
 </Grid>
 <Grid book sm={12} xs={12} md={12}>
   <Item sx={{ height: "100%" }}>
     <Typography variant="subtitle1">
-      <strong>Current Time:</strong>
+    <h1><strong>Current Date:</strong></h1>
     </Typography>
-    <Typography variant="body1">{props.data.current_date}</Typography>
+    <Typography variant="body1"><h3>{props.data.current_date}</h3></Typography>
   </Item>
 </Grid>
 <Grid book sm={12} xs={12} md={12}>
   <Item sx={{ height: "100%" }}>
     <Typography variant="subtitle1">
-      <strong>Lucky Number:</strong>
+    <h1><strong>Lucky Number:</strong></h1>
     </Typography>
-    <Typography variant="body1">{props.data.lucky_number}</Typography>
+    <Typography variant="body1"><h3>{props.data.lucky_number}</h3></Typography>
   </Item>
 </Grid>
 </Grid>
@@ -133,9 +134,49 @@ sx={{ m: 1, pr: 2, border: "1px solid", borderRadius: 1 }}
             console.log("CASE LEO");
             signImage = leo;
             break;
-        case 'sagitarius': 
+        case 'sagittarius': 
             console.log("CASE Sag");
             signImage = sagittarius;
+            break;
+        case 'aquarius': 
+            console.log("CASE Aq");
+            signImage = aquarius;
+            break;
+        case 'aries': 
+            console.log("CASE Air");
+            signImage = aries;
+            break;
+        case 'cancer': 
+            console.log("CASE Can");
+            signImage = cancer;
+            break;
+        case 'capricorn': 
+            console.log("CASE Cap");
+            signImage = capricorn;
+            break;
+        case 'gemini': 
+            console.log("CASE Gem");
+            signImage = gemini;
+            break;
+        case 'libra': 
+            console.log("CASE Lib");
+            signImage = libra;
+            break;
+        case 'pisces': 
+            console.log("CASE Pis");
+            signImage = pisces;
+            break;
+        case 'scorpio': 
+            console.log("CASE Sco");
+            signImage = scorpio;
+            break;
+        case 'taurus': 
+            console.log("CASE Tau");
+            signImage = taurus;
+            break;
+        case 'virgo': 
+            console.log("CASE Vir");
+            signImage = virgo;
             break;
         default:
             console.log("Selet sign Button")    
@@ -143,7 +184,7 @@ sx={{ m: 1, pr: 2, border: "1px solid", borderRadius: 1 }}
 
     return (
         <div>
-        <h2>{timeframe} your horoscope for {sign} is...
+        <h2 id="h1">{timeframe} your horoscope for {sign} is...
         </h2>
             {console.log(sign)}
          <SingleCard data={data} signImage={signImage} /> 

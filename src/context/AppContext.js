@@ -9,22 +9,21 @@ const AppContextProvider=({children})=>{
         if(user){
             return JSON.parse(user)
         }
-    }
-    const [user, _setUser] = useState(getUserFromLS())
+    };
+    const [user, _setUser] = useState(getUserFromLS() ?? {});
     const [alert, setAlert] = useState({});
-
 
     const setUser =(user)=>{
         localStorage.setItem('user', JSON.stringigy(user))
         _setUser(user)
     }
 
-    const values = (
+    const values = {
         user,
         setUser,
         alert,
         setAlert
-    )
+    }
 
     return (
         <AppContext.Provider value={values}>

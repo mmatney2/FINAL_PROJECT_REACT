@@ -9,53 +9,61 @@ import useRegister from '../hooks/useRegister';
 import Error from '../components/Error';
 import { useParams } from "react-router-dom";
 import {Navigate} from 'react-router-dom'
+import {Topography} from '@mui/material';
+import useEdit from "../hooks/useEdit";
+import useDelete from "../hooks/useDelete";
 
 
 const FormSchema = Yup.object({
     email: Yup.string().email("Must be a valid e-mail format").required(),
-    password: Yup.string().required(),
     first_name: Yup.string().required(),
-    last_name: Yup.string().required()
+    last_name: Yup.string().required(),
+    password: Yup.string().required(),
+    
   });
-export default function RegisterForm(){
-  const [user, setUser]= useState({
-    email: "",
-    password: "",
-    first_name:"",
-    last_name:""
-  })
-  const options = [
-    {key: 'Email', value: 'email'},
-    {key: 'Password', value: 'password'}
-  ]
+export default function RegisterForm({user}){
+  // const {user, setAlert} = useState({})
+  const [newUser, setNewUser]= useState('')
+  // const [editUser, setEditUser]= useState('')
+  // const [deleteUser, setDeleteUser]=useState(0)
+
+
+  useRegister(newUser);
+  // useEdit(editUser, user?.id)
+  // useDelete(deleteUser)
+  
   const initialValues = {
-    email: "",
-    password: "",
-    first_name:"",
-    last_name:""
+    email:user?.email ??  "",
+    password: user?.password ??  "",
+    first_name: user?.first_name ?? "",
+    last_name:user?.last_name ?? ""
   };
   
-
-
-const onSubmit = values => {
-  console.log('Form data', values)
-}
-const handleSubmit=(values)=>{
-  console.log(values)
-}
-
+  const handleSubmit=(values, resetForm)=>{
+    // if(user){
+    //   setEditUser(values)
+    // }else{
+    //   setNewUser(values)
+    // }
+    console.log(values)
+    resetForm(initialValues)
+  }
+//   const handleDelete=()=>{
+//     setDeleteUser(user)
+// }
 
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: FormSchema,
     onSubmit: (values, {resetForm}) => {handleSubmit(values, resetForm);
-    }
+    },
+    enableReinitialize:true
   })
 
 
 
   return (
-    <form onSubmit={formik.handleSubmit} method = 'post'>
+    <form onSubmit={formik.handleSubmit}>
       <TextField
         id="email"
         name="email"
@@ -116,8 +124,11 @@ const handleSubmit=(values)=>{
           formik.touched.last_name && formik.errors.last_name
         }
       />
+      <Button type="submit" sx={{width:"100%", my:1}}>{user?"Edit User":"Create User"}</Button>
+            {/* <Button color="error" onClick={()=>handleDelete()} sx={{width:"100%", my:1}}>Delete</Button> */}
+      {/* <Button type="submit" sx={{ width: "100%" }}>Register</Button> */}
+      {/* <Error>{error}</Error> */}
 
-      <Button type="submit" sx={{ width: "100%" }}>Register</Button>
     </form>
   );
 }

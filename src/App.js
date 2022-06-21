@@ -4,7 +4,7 @@ import React, { useState, Component} from 'react';
 import Error from './components/Error';
 import Navbar from './components/Navbar';
 import {getUser} from './api/apiBasicAuth';
-import { delUser, putUser, postUser} from './api/apiUser'
+import apiClient from './api/apiUser'
 import { CancelToken } from 'apisauce';
 import LoginForm from './forms/LoginForm';
 import RegForm from './forms/RegisterForm';
@@ -24,23 +24,27 @@ import Horoscope from './views/Horoscope';
 import Tarot from './views/Tarot';
 import { AppContext } from "./context/AppContext";
 import { useContext } from "react";
+import horoscope_today from './assets/horoscope_today.webp';
 
 
 
 const HomePage = () => {
+  const {user}=useContext(AppContext)
 
-  return <h1 color="white">Please Click on Menu to Choose Your Path....</h1>;
+  return<> <h2 id="h1"color="white"textalign="center" >Please Click on Menu to Choose Your Path....</h2><img src ={horoscope_today}height="250px"align="center"/></>
+
 };
 
 
-const my_token="l3tKyac27GMqMNo_de2kKbNj052TL0Px7TmDXu4ecTM"
+const my_token="TWksnjcI1sgUQsZmM5LdRhZMNONYsj4EWGfFTxdWFf8"
 const handleAPITest=async ()=>{
   const source = CancelToken.source();
-  let data={"email": "b@b.com",
-  "first_name": "bb",
+  let data={"email": "f@f.com",
+  "first_name": "f",
   "password":"123",
-  "last_name": "bb"}
-  const response_object=await putUser(my_token, 7,data,
+  "last_name": "f",
+  "id": 7}
+  const response_object=await apiClient.del(my_token,
     source.token
     );
   console.log(response_object);
@@ -52,18 +56,20 @@ function App(){
    {
     const myStyle={
         backgroundImage: 
- "url('https://img.freepik.com/free-photo/astrology-horoscope-pattern-texture-background-graphic-design_41691-3225.jpg?w=900')",
-        height:'100vh',
+ "url('https://wallpaperaccess.com/full/353239.jpg')",
+        height:'100%',
         marginTop:'-70px',
         fontSize:'50px',
-        backgroundSize: 'cover',
+        backgroundSize:'auto',
         backgroundRepeat: 'no-repeat',
     };
     return(
       <>
         <Navbar>
         <Box sx={{minHeight:'90vh'}}>
-         <Button color = "success" onClick={handleAPITest}>Test API Call</Button>
+         <Button color = "success" onClick={handleAPITest}>Test API Call</Button><div style={myStyle}>
+         
+
           <Routes>
             <Route path="/login" element={<Login/>}/>
             <Route path="/register" element={<Register/>}/>
@@ -74,8 +80,7 @@ function App(){
             <Route path="/edit" element={<Edit/>}/>
             <Route path="/logout" element={<Logout/>}/>
             {/* <Route path="/tarot" element={<Tarot/>}/> */}
-         </Routes>
-         {/* <div style={myStyle}></div> */}
+         </Routes></div>
          </Box>
          {/* {user?.is_admin ? <HomePage/> : <Login/> && <Register/>} */}
          
