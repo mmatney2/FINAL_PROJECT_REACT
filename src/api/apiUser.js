@@ -16,11 +16,11 @@ export const post= async ( data,cancelToken) => {
 export const put= async ( token, id, data, cancelToken) => {
     
     const response = await apiClientT(token, cancelToken).put(endpoint+"/"+id, data);
-    console.log(response)
+    // console.log(response)
     return response.ok
 }
 
-export const del= async ( token, id, cancelToken) => {
+export const del= async ( token, cancelToken) => {
     
     const response = await apiClientT( token, cancelToken).delete(endpoint);
     console.log(response)

@@ -1,12 +1,12 @@
 import React, {useEffect, useContext} from 'react'
-import put from '../api/apiUser'; 
+import apiUser from '../api/apiUser'; 
 import apiClient from '../api/apiUser'
 import { CancelToken } from 'apisauce';
 import {AppContext} from '../context/AppContext';
 import { useNavigate } from "react-router-dom";
 
 
-export default function useEdit( user_id) {
+export default function useEdit( id) {
 //get navigate
     const {user, setAlert} = useContext(AppContext)
     const navigate = useNavigate()
@@ -15,11 +15,11 @@ export default function useEdit( user_id) {
         ()=>{
             let response
             const source = CancelToken.source()
-            if (user?.first_name){
+            if (user){
                 (async()=>{
-                    response = await apiClient.put(user.token, user_id, user, source.token)
+                    response = await apiClient.put(user.token, id, user, source.token)
                     if (response){
-                        setAlert({msg:`Item: ${user.first_name} Editted`,'cat':'success'})
+                        setAlert({msg:`User: ${user} Edited`,user:'success'})
                     }else if(response === false && response !== undefined){
                         setAlert({msg:`Please reauthorize you account`,'cat':'warning'})
                         navigate('/')                    
@@ -27,7 +27,7 @@ export default function useEdit( user_id) {
                 })()
             }
             return ()=>{source.cancel()}
-        },[ user, user_id, user.token]
+        },[ id,user, user.token]
     )
 }
 

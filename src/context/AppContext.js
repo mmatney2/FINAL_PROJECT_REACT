@@ -14,7 +14,7 @@ const AppContextProvider=({children})=>{
     const [alert, setAlert] = useState({});
 
     const setUser =(user)=>{
-        localStorage.setItem('user', JSON.stringigy(user))
+        localStorage.setItem('user', JSON.stringify(user))
         _setUser(user)
     }
 

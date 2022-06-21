@@ -22,10 +22,10 @@ const FormSchema = Yup.object({
     
   });
 export default function RegisterForm({user}){
-  // const {user, setAlert} = useState({})
+  // const {user, error} = useContext(AppContext);
   const [newUser, setNewUser]= useState('')
-  // const [editUser, setEditUser]= useState('')
-  // const [deleteUser, setDeleteUser]=useState(0)
+  const [editUser, setEditUser]= useState('')
+  const [deleteUser, setDeleteUser]=useState(0)
 
 
   useRegister(newUser);
@@ -40,16 +40,16 @@ export default function RegisterForm({user}){
   };
   
   const handleSubmit=(values, resetForm)=>{
-    // if(user){
-    //   setEditUser(values)
-    // }else{
-    //   setNewUser(values)
-    // }
+    if(user){
+      setEditUser(values)
+    }else{
+      setNewUser(values)
+    }
     console.log(values)
     resetForm(initialValues)
   }
-//   const handleDelete=()=>{
-//     setDeleteUser(user)
+  // const handleDelete=()=>{
+  //   setDeleteUser(user)
 // }
 
   const formik = useFormik({
@@ -124,15 +124,15 @@ export default function RegisterForm({user}){
           formik.touched.last_name && formik.errors.last_name
         }
       />
-      <Button type="submit" sx={{width:"100%", my:1}}>{user?"Edit User":"Create User"}</Button>
-            {/* <Button color="error" onClick={()=>handleDelete()} sx={{width:"100%", my:1}}>Delete</Button> */}
+      
+      <Button type="submit" sx={{width:"100%", my:1}}>{user?"Edit User":"Register User"}</Button>
+      {/* <Button color="error" onClick={()=>handleDelete()} sx={{width:"100%", my:1}}>Delete</Button> */}
       {/* <Button type="submit" sx={{ width: "100%" }}>Register</Button> */}
       {/* <Error>{error}</Error> */}
 
     </form>
   );
 }
-
 
 // import FormikControl from './FormikControl';
 

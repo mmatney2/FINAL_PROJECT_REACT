@@ -36,7 +36,7 @@ const HomePage = () => {
 };
 
 
-const my_token="TWksnjcI1sgUQsZmM5LdRhZMNONYsj4EWGfFTxdWFf8"
+const my_token="wl7Q-_CmhJvQipSVE79KsQvvzQyrKkQrvIzA6YT-c44"
 const handleAPITest=async ()=>{
   const source = CancelToken.source();
   let data={"email": "f@f.com",
