@@ -65,9 +65,9 @@ function App(){
     };
     return(
       <>
-        <Navbar>
+        <Navbar><div style={myStyle}>
         <Box sx={{minHeight:'90vh'}}>
-         <Button color = "success" onClick={handleAPITest}>Test API Call</Button><div style={myStyle}>
+         {/* <Button color = "success" onClick={handleAPITest}>Test API Call</Button> */}
          
 
           <Routes>
@@ -79,12 +79,12 @@ function App(){
             {/* <Route path="/horoscope" element={<Horoscope/>}/> */}
             <Route path="/edit" element={<Edit/>}/>
             <Route path="/logout" element={<Logout/>}/>
-            {/* <Route path="/tarot" element={<Tarot/>}/> */}
-         </Routes></div>
+            <Route path="/tarot" element={<Tarot/>}/>
+         </Routes>
          </Box>
          {/* {user?.is_admin ? <HomePage/> : <Login/> && <Register/>} */}
          
-   
+   </div>
      </Navbar>
      
 

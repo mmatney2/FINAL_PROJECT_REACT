@@ -21,7 +21,7 @@ export default function useEdit( newData) {
                         setAlert({msg:`User: ${user} Edited`,user:'success'})
                     }else if(response === false && response !== undefined){
                         setAlert({msg:`Please reauthorize you account`,'cat':'warning'})
-                        navigate('/login')                    
+                        navigate('/')                    
                     }
                 })()
             }

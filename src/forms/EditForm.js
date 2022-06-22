@@ -28,10 +28,10 @@ const FormSchema = Yup.object({
 export default function EditForm() {
   const {user, setUser } = useContext(AppContext);
     const [editUser, setEditUser]=useState('')
-    // const [deleteUser, setDeleteUser] = useState(0)
+    const [deleteUser, setDeleteUser] = useState(0)
     const [newUser, setNewUser]= useState('')
 
-    // useDelete(deleteUser)
+    useDelete(deleteUser)
     useEdit(editUser )
 
     const initialValues = {
@@ -42,9 +42,9 @@ export default function EditForm() {
         
     };  
 
-    // const handleDelete=()=>{
-    //     setDeleteUser(user?.user_id)
-    // }
+    const handleDelete=()=>{
+        setDeleteUser(user?.user_id)
+    }
     const handleSubmit=(values, resetForm)=>{
         if(user){
           setEditUser(values)
@@ -128,7 +128,7 @@ export default function EditForm() {
       
       <Button type="submit" sx={{width:"100%", my:1}}>{user?"Edit User":"Register User"}</Button>
 
-      {/* <Button color="error" onClick={()=>handleDelete()} sx={{width:"100%", my:1}}>Delete</Button> */}
+      <Button color="error" onClick={()=>handleDelete()} sx={{width:"100%", my:1}}>Delete</Button>
       {/* <Button type="submit" sx={{ width: "100%" }}>Edit Profile</Button> */}
 
     </form>

@@ -3,11 +3,20 @@ html, body {
     height:100vh;
   }
 
-.grid{
+#signgrid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 50px;
     align-items: center;
+
+}
+.grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+    align-items: center;
+
 
 }
 #navlist{
@@ -43,86 +52,112 @@ html, body {
 
 .leo{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2022/06/15/leo-1590936958-1039749-1633977001-1118471-1655313631.jpg?itok=8S9wTdqn");
+    background-size: contain;
+
+
+    
 }
 .taurus{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/taurus.jpg");
+    background-size: contain;
+
 }
 .cancer{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/cancer.jpg");
+    background-size: contain;
+
 }
 .virgo{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/virgo.jpg");
+    background-size: contain;
+
 }
 .capricorn{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/capricorn.jpg");
+    background-size: contain;
+
 }
 .libra{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/libra.jpg");
+    background-size: contain;
+
 }
 .aries{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/aries.jpg");
+    background-size: contain;
+
 }
 .gemini{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/gemini.jpg");
+    background-size: contain;
+
 }
 .scorpio{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/scorpio.jpg");
+    background-size: contain;
+
 }
 .sagittarius{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/sagittarius.webp");
+    background-size: contain;
+
 }
 .aquarius{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/aquarius.jpg");
+    background-size: contain;
+
 }
 .pisces{
     color:white;
-    font-size: 100px;
+    font-size: 70px;
     padding:10px;
     background-image: url("./assets/pisces.jpg");
+    background-size: contain;
+
 }
 .today{
     color:white;
-    font-size: 100px;
+    font-size: 60px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-image: url("./assets/horoscope_today.webp");
     background-size: contain;
 }
 .tomorrow{
     color:black;
-    font-size: 100px;
+    font-size: 60px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     background-image: url("./assets/tomorrow_horoscope.jpg");
@@ -131,7 +166,7 @@ html, body {
 }
 .yesterday{
     color:white;
-    font-size: 100px;
+    font-size: 60px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     background-image: url("./assets/horoscope_yesterday.webp");
@@ -139,15 +174,19 @@ html, body {
 
 }
 #size{
-    height: 500px;
-    width: 700px;
+    height: 300px;
+    width: 420px;
 }
 #daySize{
     
-    height: 600px;
-    width: 600px;
+    height: 300px;
+    width: 300px;
     /* object-fit: cover; */
 }
 h2{
     color: white
+}
+
+#h1{
+    text-align: center
 }

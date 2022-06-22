@@ -6,9 +6,6 @@ import {AppContext} from '../context/AppContext';
 import {useNavigate} from 'react-router-dom';
 
 
-
-
-
 export default function useRegister(userID) {
     const navigate = useNavigate()
     const { user, setAlert } = useContext(AppContext);

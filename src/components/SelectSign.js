@@ -14,7 +14,7 @@ export const SelectSign = ({onSignSelected}) => {
     <>
     <div className="SelectSign">
     <h2 id="h1">Choose Your Sign...</h2>
-    <div className="grid">
+    <div id= "signgrid" className="grid">
       {['aries', 'taurus', 'gemini', 'cancer', 'leo','virgo', 'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'].map((sign, i)=>{
       
     return(
@@ -27,4 +27,4 @@ export const SelectSign = ({onSignSelected}) => {
       </div>
       </div>
     </>
- )}
+ )} 

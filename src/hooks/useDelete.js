@@ -7,7 +7,7 @@ import {AppContext} from '../context/AppContext';
 import {useNavigate} from 'react-router-dom';
 
 
-export default function useDelete() {
+export default function useDelete(user_id) {
     const {user, setAlert} = useContext(AppContext)
     const navigate = useNavigate()
 
@@ -15,18 +15,18 @@ export default function useDelete() {
         ()=>{
             let response
             const source = CancelToken.source()
-            if (user){
+            if (user_id){
                 (async()=>{
                     response = await apiClient.del(user.token, source.token)
                     if (response){
-                         setAlert({msg:`User: ${user} Deleted`, cat:'success'})
+                         setAlert({msg:`User: ${user_id} Deleted`, cat:'success'})
                     }else if(response === false && response !== undefined){
                          setAlert({msg:`Please reauthorize you account`, cat:'warning'})
-                         navigate('/')
+                         navigate('/register')
                     }
                 })()
             }
             return ()=>{source.cancel()}
-        },[user, user.token]
+        },[user_id, user.token]
     )
 }
