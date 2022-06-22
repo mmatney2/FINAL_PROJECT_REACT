@@ -88,7 +88,7 @@ export default function TemporaryDrawer({children}) {
 
       <List >
         {
-        [{label:'Home', path:'/'}, 
+        [{label:'Home', path:'/horoscopes'}, 
         {label:'Daily Horoscope', path:'/horoscopes'},
         {label:'Tarot Reading', path:'/tarot'},
         {label:'Edit Profile', path:'/edit'},

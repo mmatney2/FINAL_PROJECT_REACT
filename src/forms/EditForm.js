@@ -43,7 +43,7 @@ export default function EditForm() {
     };  
 
     const handleDelete=()=>{
-        setDeleteUser(user?.user_id)
+        setDeleteUser(user)
     }
     const handleSubmit=(values, resetForm)=>{
         if(user){
@@ -128,8 +128,7 @@ export default function EditForm() {
       
       <Button type="submit" sx={{width:"100%", my:1}}>{user?"Edit User":"Register User"}</Button>
 
-      <Button color="error" onClick={()=>handleDelete()} sx={{width:"100%", my:1}}>Delete</Button>
-      {/* <Button type="submit" sx={{ width: "100%" }}>Edit Profile</Button> */}
+      <Button color="error" onClick={()=>handleDelete()} sx={{width:"100%", my:1}}>Delete User</Button>
 
     </form>
   );

@@ -38,6 +38,17 @@ function SingleCard(props){
         
         return( 
     <>
+
+          {/* <p>Color: {props.data.color}</p>
+        <p>Lucky Time: {props.data.lucky_time}</p>
+        <p>Description: {props.data.description}</p>
+        <p>Date Range: {props.data.date_range}</p>
+        <p>Mood: {props.data.mood}</p>
+        <p>compatibility: {props.data.compatibility}</p>
+        <p>Current Date: {props.data.current_date}</p>
+        <p>Lucky Number: {props.data.lucky_number}</p> */}
+
+
 <Grid
 container
 spacing={1}
@@ -122,7 +133,7 @@ sx={{fontSize:40, m: 1, pr: 2, border: "10px solid", borderRadius: 1 }}
     useEffect(()=>{
         
        getHoroscopes(sign, timeframe).then((res)=> {
-        console.log("check", res);
+        console.log( res);
         setdata(res)
     });
      
@@ -184,8 +195,8 @@ sx={{fontSize:40, m: 1, pr: 2, border: "10px solid", borderRadius: 1 }}
 
     return (
         <div>
-        <h2 id="h1">{timeframe} your horoscope for {sign} is...
-        </h2>
+        <h2 id="h1">{timeframe} your horoscope for {sign}...</h2>
+        <h6 id="h1">(Please refresh page to start again)</h6>
             {console.log(sign)}
          <SingleCard data={data} signImage={signImage} /> 
         </div>

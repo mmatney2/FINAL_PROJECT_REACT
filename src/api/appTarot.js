@@ -2,26 +2,36 @@
 
 
 
+// export const getTarots = () => {
+//     console.log();
+//     const URL = `https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=10/api/v1/cards/random`;
+//    return fetch(URL, {
+//         method: 'POST'
+//     }).then(response => response.json());
+// };
+
+import { useEffect, useState } from "react";
 
 
 
-
-// https://github.com/ekelen/tarot-api
-// https://rws-cards-api.herokuapp.com/
-
+export  function App(){
+const [tarot, setTarot] = useState('')
 
 
-export const getTarot = () => {
-    console.log();
-
-    fetch("https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=10")
+useEffect(()=>{
+    fetch(`https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=10/api/v1/cards/random`)
     .then(function (response) {
         return response.json()
-        })
-        .then(function (response) {
+    })
+    .then(function (response) {
         // handle ten random cards
-            })
-            .catch(function (error) {
-            // handle what went wrong
-                });
+        setTarot(response);
+        console.log(response)
+    }, [tarot])
+    console.log()
+    .catch(function (error) {
+        // handle what went wrong
+        console.log("there was an error")
+    });
+})
 }
