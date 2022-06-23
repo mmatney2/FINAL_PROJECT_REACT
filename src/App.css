@@ -171,7 +171,9 @@ html, body {
 
     background-image: url("./assets/horoscope_yesterday.webp");
     background-size: contain;
-
+}
+.tarot{
+    image: url("./assets/tarot.jpg")
 }
 #size{
     height: 300px;
