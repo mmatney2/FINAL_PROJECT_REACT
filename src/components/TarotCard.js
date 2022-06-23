@@ -25,11 +25,11 @@ function SingleTarot(props){
         return( 
             <>           
         <p id="h1"><strong>Tarot Warning:</strong> </p>
-        <p id="h1">{props.data[0].name}</p>
-        <p id="h1">{props.data[0].meaning_rev}</p>
-        <p id="h1">{props.data[0].suit}</p>
-        <p id="h1">{props.data[0].value}</p>
-        <p id="h1">{props.data[0].type}</p>
+        <p id="h1">Name: {props.data[0].name}</p>
+        <p id="h1">Meaning: {props.data[0].meaning_rev}</p>
+        <p id="h1">Suit: {props.data[0].suit}</p>
+        <p id="h1">Value: {props.data[0].value}</p>
+        {/* <p id="h1">Type: {props.data[0].type}</p> */}
 
 
 

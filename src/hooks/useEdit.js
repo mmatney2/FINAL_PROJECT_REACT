@@ -19,6 +19,8 @@ export default function useEdit( newData) {
                     response = await apiClient.put(user.token, user.id, newData, source.token)
                     if (response){
                         setAlert({msg:`User: ${user} Edited`,user:'success'})
+                        navigate('/')                    
+
                     }else if(response === false && response !== undefined){
                         setAlert({msg:`Please reauthorize you account`,'cat':'warning'})
                         navigate('/')                    
